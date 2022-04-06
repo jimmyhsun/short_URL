@@ -46,7 +46,7 @@ def short():
         index = str(url)
         token = base62_encode(index)
 
-        short_url = str(f"http://127.0.0.1:5000/{token}".format(token=token))
+        short_url = str(f"https://urlchange.herokuapp.com/{token}".format(token=token))
         conn = sql.connect('database.db')
         cur = conn.cursor()
         cur.execute('insert into shorturl (shorturl,longurl) values (?,?)',(token,index))
